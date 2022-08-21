@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Collection</title>
+</head>
+<body bgcolor="Gainsboro">
+    <h1 align="center"><u>Prediction on sample delivered by the agent to the lab</u></h1>
+    <h1 align="center"><u>Please fill all the details & then click "SUBMIT" button</u></h1>
+    {% if label %}
+        {% if label==1  %}
+            <h3 align = "center" style="color:green">Agent will reach to the lab within time!</h3>
+        {% else %}
+            <h3 align = "center" style="color:red">Agent will not reach to the lab within time!</h3> 
+        {% endif %}
+    {% endif %}
+   
+    <form action="/predict" method="POST">
+        <h3 align="center"><label for = 'Patient_Age'>Enter Patient's Age:</label></h3><h4 align="center"><input step="1" min="1" max="200" type = 'number' id = 'myTextBox1' name = 'Patient_Age' style="height: 15px ; width: 300px;" placeholder="Enter Age in Years"></h4>
+        <h3 align="center"><label for="Patient_Gender">Enter Patient's Gender:</label></h3>
+        <h4 align="center"><select id="myTextBox1" name="Patient_Gender">
+            <option value="" disabled selected>Select Gender</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>   
+        </select></h4>
+        <h3 align="center"><label for="Name_Of_Test">Enter Test Name:</label></h3>
+        <h4 align="center"><select id="myTextBox1" name="Name_Of_Test">
+            <option value="" disabled selected>Select type of test</option>
+            <option value="1">Complete Urinalysis</option>
+            <option value="2">CBC</option>
+            <option value="3">Acute kidney profile</option>
+            <option value="4">Fasting blood sugar</option>
+            <option value="5">RTPCR</option>
+            <option value="6">TSH</option>
+            <option value="7">Vitamin D-25Hydroxy</option>
+            <option value="8">Lipid Profile</option>
+            <option value="9">H1N1</option>
+            <option value="10">HbA1c</option>   
+        </select></h4>
+        <h3 align="center"><label for="Sample">Enter Sample Name:</label></h3>
+        <h4 align="center"><select id="myTextBox1" name="Sample">
+            <option value="" disabled selected>Select type of sample</option>
+            <option value="1">Blood</option>
+            <option value="2">Swab</option>
+            <option value="3">Urine</option>   
+        </select></h4>
+        <h3 align="center"><label for="Way_Of_Storage_Of_Sample">Enter Way of Storing the Sample:</label></h3>
+        <h4 align="center"><select id="myTextBox1" name="Way_Of_Storage_Of_Sample">
+            <option value="" disabled selected>Select kind of storage</option>
+            <option value="1">Normal</option>
+            <option value="2">Advanced</option>   
+        </select></h4>
+        <h3 align="center"><label for = 'Test_Booking_Time_HH_MM'>Enter Test Booking Time Hours-Minutes:</label></h3><h4 align="center"><input step="0.05" min="1" max="200" type = 'number' id = 'myTextBox1' name = 'Test_Booking_Time_HH_MM' style="height: 15px ; width: 300px;" placeholder="Enter the Time taken in Hours-Minutes"></h4>
+        <h3 align="center"><label for = 'Scheduled_Sample_Collection_Time_HH_MM'>Enter Scheduled Sample Collection Time Hours-Minutes:</label></h3><h4 align="center"><input step="0.05" min="1" max="200" type = 'number' id = 'myTextBox1' name = 'Scheduled_Sample_Collection_Time_HH_MM' style="height: 15px ; width: 300px;" placeholder="Enter the Time taken in Hours-Minutes"></h4>
+        <h3 align="center"><label for = 'Agent_ID'>Enter Agent ID:</label></h3><h4 align="center"><input step="1" min="1" max="49" type = 'number' id = 'myTextBox1' name = 'Agent_ID' style="height: 15px ; width: 300px;" placeholder="Enter Agent ID"></h4>
+        <h3 align="center"><label for="Traffic_Conditions">Enter Traffic Conditions:</label></h3>
+        <h4 align="center"><select id="myTextBox1" name="Traffic_Conditions">
+            <option value="" disabled selected>Select kind of Traffic Conditions</option>
+            <option value="2">Low Traffic</option>
+            <option value="1">Medium Traffic</option>
+            <option value="3">High Traffic</option>   
+        </select></h4>
+        <h3 align="center"><label for = 'Time_Taken_To_Reach_Patient_MM'>Enter Time taken to reach patient location in Minutes:</label></h3><h4 align="center"><input step="1" min="1" max="1000" type = 'number' id = 'myTextBox1' name = 'Time_Taken_To_Reach_Patient_MM' style="height: 15px ; width: 300px;" placeholder="Enter the Time taken in Minutes"></h4>
+        <h3 align="center"><label for = 'Time_For_Sample_Collection_MM'>Enter Time taken for sample collection in Minutes:</label></h3><h4 align="center"><input step="1" min="1" max="10000" type = 'number' id = 'myTextBox1' name = 'Time_For_Sample_Collection_MM' style="height: 15px ; width: 300px;" placeholder="Enter the Time taken in Minutes"></h4>
+        <h3 align="center"><label for = 'Time_Taken_To_Reach_Lab_MM'>Enter Time taken to reach lab in Minutes:</label></h3><h4 align="center"><input step="1" min="1" max="10000" type = 'number' id = 'myTextBox1' name = 'Time_Taken_To_Reach_Lab_MM' style="height: 15px ; width: 300px;" placeholder="Enter the Time taken in Minutes"></h4>
+        <h4 align="center"><button>SUBMIT</button></h4>
+    </form>
+   
+    
+    
+    
+</body>
+</html>
